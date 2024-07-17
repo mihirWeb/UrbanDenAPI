@@ -11,9 +11,11 @@ dotenv.config();
 const app = express();
 
 const allowedOrigins = [
-    "https://urbanden.onrender.com/"
+    "https://urbanden.onrender.com",
+    "https://urbanden.onrender.com/", // Add this
+    "*"
   ];
-
+  
 app.use(cors({
     origin: allowedOrigins,
   }));
