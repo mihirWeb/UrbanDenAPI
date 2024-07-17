@@ -4,11 +4,19 @@ import dotenv from "dotenv";
 import userRouter from "./routes/user.route.js"
 import authRouter from "./routes/auth.route.js";
 import orderRouter from "./routes/order.route.js";
-// import cors from "cors";
+import cors from "cors";
 import productRouter from "./routes/product.route.js";
 
 dotenv.config();
 const app = express();
+
+const allowedOrigins = [
+    "https://urbanden.onrender.com/"
+  ];
+
+app.use(cors({
+    origin: allowedOrigins,
+  }));
 
 (async() => {
     try {
