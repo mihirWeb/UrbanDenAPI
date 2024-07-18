@@ -6,6 +6,7 @@ import authRouter from "./routes/auth.route.js";
 import orderRouter from "./routes/order.route.js";
 import cors from "cors";
 import productRouter from "./routes/product.route.js";
+import path from "path";
 
 dotenv.config();
 const app = express();
@@ -21,6 +22,8 @@ const app = express();
 //   ];
   
 app.use(cors());
+
+app.use(express.static('./build')); // Serve static files
 
 (async() => {
     try {
@@ -39,6 +42,11 @@ app.use("/api/v2/user", userRouter);
 app.use("/api/v2/auth", authRouter);
 app.use("/api/v2/products", productRouter);
 app.use("/api/v2/orders", orderRouter);
+
+// Catch-all route handler for SPA routing
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './build', 'index.html'));
+});
 
 app.listen(process.env.PORT || 5000, () => {
     console.log("Backend is running");
