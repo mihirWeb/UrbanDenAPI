@@ -10,19 +10,17 @@ import productRouter from "./routes/product.route.js";
 dotenv.config();
 const app = express();
 
-const allowedOrigins = [
-    "https://urbanden.onrender.com",
-    "https://urbanden.onrender.com/",
-    "http://localhost:5173/",
-    "http://localhost:5173",
-    "https://admindashboard-j6if.onrender.com/",
-    "https://admindashboard-j6if.onrender.com", // Add this
-    "*"
-  ];
+// const allowedOrigins = [
+//     "https://urbanden.onrender.com",
+//     "https://urbanden.onrender.com/",
+//     "http://localhost:5173/",
+//     "http://localhost:5173",
+//     "https://admindashboard-j6if.onrender.com/",
+//     "https://admindashboard-j6if.onrender.com", // Add this
+//     "*"
+//   ];
   
-app.use(cors({
-    origin: allowedOrigins,
-  }));
+app.use(cors());
 
 (async() => {
     try {
