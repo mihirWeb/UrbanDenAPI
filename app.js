@@ -12,7 +12,11 @@ const app = express();
 
 const allowedOrigins = [
     "https://urbanden.onrender.com",
-    "https://urbanden.onrender.com/", // Add this
+    "https://urbanden.onrender.com/",
+    "http://localhost:5173/",
+    "http://localhost:5173",
+    "https://admindashboard-j6if.onrender.com/",
+    "https://admindashboard-j6if.onrender.com", // Add this
     "*"
   ];
   
